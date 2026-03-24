@@ -1,0 +1,70 @@
+project:
+  shapefile_path: C:/Users/Hadi/Documents/work/postdoc_bonn/projects/assist_others/shakil_projects/Study_location/Study_location.shp
+  join_column: ADM4_PCODE
+  years:
+    - 2000
+    - 2001
+    - 2002
+    - 2003
+    - 2004
+    - 2005
+    - 2006
+    - 2007
+    - 2008
+    - 2009
+    - 2010
+    - 2011
+    - 2012
+    - 2013
+    - 2014
+    - 2015
+    - 2016
+    - 2017
+    - 2018
+  cropland_classes: [10, 11, 12, 20]
+  lc_start_year: 2000
+
+landcover:
+  tiles:
+    E85N25: U:/hadi/data_dump/GLC_FCS30D/Bangladesh/GLC_FCS30D_19852022maps_E80-E85/GLC_FCS30D_19852022maps_E80-E85/GLC_FCS30D_20002022_E85N25_Annual_V1.1.tif
+    E85N30: U:/hadi/data_dump/GLC_FCS30D/Bangladesh/GLC_FCS30D_19852022maps_E80-E85/GLC_FCS30D_19852022maps_E80-E85/GLC_FCS30D_20002022_E85N30_Annual_V1.1.tif
+    E90N25: U:/hadi/data_dump/GLC_FCS30D/Bangladesh/GLC_FCS30D_19852022maps_E90-E95/GLC_FCS30D_19852022maps_E90-E95/GLC_FCS30D_20002022_E90N25_Annual_V1.1.tif
+    E90N30: U:/hadi/data_dump/GLC_FCS30D/Bangladesh/GLC_FCS30D_19852022maps_E90-E95/GLC_FCS30D_19852022maps_E90-E95/GLC_FCS30D_20002022_E90N30_Annual_V1.1.tif
+
+salinity:
+  ece_dirs:
+    - U:/hadi/data_dump/soil_salinity/ECe_2000_2009
+    - U:/hadi/data_dump/soil_salinity/ECe_2010_2018
+    - U:/hadi/data_dump/soil_salinity
+  output_csv: output/village_union_cropland_salinity_2000_2018.csv
+  cropland_share_dir: data/intermediate/cropland_share_ece_grid
+  cropland_weight_dir: data/intermediate/cropland_weight_ece_grid
+  ece_scale: 100.0
+
+elevation:
+  output_csv: output/village_union_elevation.csv
+  ever_cropland_path: data/intermediate/ever_cropland.tif
+  dem_aligned_path: data/intermediate/nasadem_aligned_to_cropland.tif
+  weight_raster_path: data/intermediate/ever_cropland_weights.tif
+  stac_api_url: https://planetarycomputer.microsoft.com/api/stac/v1
+  dem_collection: nasadem
+  dem_asset_key:
+
+weather:
+  variables: [ppt, tmin, tmax, srad, pdsi]
+  monthly_output_csv: output/village_union_weather_monthly_2000_2018.csv
+  annual_output_csv: output/village_union_weather_annual_2000_2018.csv
+  cropland_share_dir: data/intermediate/cropland_share_terraclimate_grid
+  cropland_weight_dir: data/intermediate/cropland_weight_terraclimate_grid
+  monthly_raster_dir: data/intermediate/terraclimate_monthly_rasters
+  terraclimate_account: cpdataeuwest
+  terraclimate_container: cpdata
+  terraclimate_dataset_path: cpdata/terraclimate.zarr
+
+groundwater:
+  groundwater_root: U:/hadi/data_dump_migrated_from_laptop/water_table_depth
+  output_csv: output/village_union_groundwater_table_depth.csv
+  cropland_share_dir: data/intermediate/cropland_share_groundwater_grid
+  cropland_weight_dir: data/intermediate/cropland_weight_groundwater_grid
+  groundwater_variable: WTD
+

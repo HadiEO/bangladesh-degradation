@@ -1,0 +1,23 @@
+name: bangladesh-degradation
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - geopandas
+  - rasterio
+  - shapely
+  - pyproj
+  - xarray
+  - netcdf4
+  - zarr
+  - adlfs
+  - pyyaml
+  - exactextract
+  - pystac-client
+  - azure-core
+  - pip
+  - pip:
+      - planetary-computer
+
